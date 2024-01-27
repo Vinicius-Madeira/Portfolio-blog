@@ -1,11 +1,12 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+import { BrowserRouter } from "react-router-dom";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { ThemeProvider, createTheme } from "@material-ui/core";
+import { deepOrange, green } from "@material-ui/core/colors";
 import "./index.css";
 import App from "./App";
-import { ThemeProvider, createTheme } from "@material-ui/core";
 import Layout from "./components/Layout";
-import { deepOrange, green } from "@material-ui/core/colors";
-import { BrowserRouter } from "react-router-dom";
 
 const theme = createTheme({
   typography: {
@@ -21,17 +22,21 @@ const theme = createTheme({
   },
 });
 
+const queryClient = new QueryClient();
+
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
 root.render(
   <React.StrictMode>
     <ThemeProvider theme={theme}>
-      <BrowserRouter>
-        <Layout>
-          <App />
-        </Layout>
-      </BrowserRouter>
+      <QueryClientProvider client={queryClient}>
+        <BrowserRouter>
+          <Layout>
+            <App />
+          </Layout>
+        </BrowserRouter>
+      </QueryClientProvider>
     </ThemeProvider>
   </React.StrictMode>
 );
