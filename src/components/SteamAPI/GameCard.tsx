@@ -1,5 +1,9 @@
+import { baseMediaURL, baseStoreURL, formatPlaytime, Game } from "./Data";
+import { FaSteam } from "react-icons/fa";
 import {
+  Button,
   Card,
+  CardActions,
   CardContent,
   CardMedia,
   Theme,
@@ -7,16 +11,10 @@ import {
   createStyles,
   makeStyles,
 } from "@material-ui/core";
-import { Palette } from "@material-ui/icons";
 
 interface GameCardProps {
-  name: string;
-  id: number;
-  playtimeTwoWeeks: number;
-  playtimeForever: number;
+  game: Game;
 }
-
-const baseMediaURL = "https://cdn.cloudflare.steamstatic.com/steam/apps";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -29,35 +27,29 @@ const useStyles = makeStyles((theme: Theme) =>
     strong: {
       color: theme.palette.secondary.main,
     },
+    button: {
+      padding: "8px 0",
+    },
   })
 );
 
-// Steam API returns the playtime in minutes.
-// This function formats the playtime to hours.
-function formatPlaytime(time: number): number {
-  return time / 60;
-}
-
-export default function GameCard({
-  name,
-  id,
-  playtimeTwoWeeks,
-  playtimeForever,
-}: GameCardProps) {
+export default function GameCard({ game }: GameCardProps) {
   const classes = useStyles();
-  const bannerURL = `${baseMediaURL}/${id}/header.jpg`;
+  const bannerURL = `${baseMediaURL}/${game.appid}/header.jpg`;
+  const StoreGameURL = `${baseStoreURL}/${game.appid}`;
+
   return (
-    <Card className={classes.root}>
+    <Card variant="outlined" className={classes.root}>
       <CardMedia
         className={classes.media}
         component="img"
-        alt={`${name} Banner`}
+        alt={`${game.name} Banner`}
         image={bannerURL}
-        title={`${name} Banner`}
+        title={`${game.name} Banner`}
       />
       <CardContent>
-        <Typography variant="h5" component="h2" gutterBottom>
-          {name}
+        <Typography variant="h5" component="h2" noWrap gutterBottom>
+          {game.name}
         </Typography>
         <Typography
           variant="body2"
@@ -65,11 +57,12 @@ export default function GameCard({
           component="p"
           gutterBottom
         >
-          Played for:{" "}
+          {"Played "}
           <span className={classes.strong}>
-            {formatPlaytime(playtimeTwoWeeks).toFixed(1) + " hour(s)"}
-          </span>{" "}
-          in the last two weeks
+            {formatPlaytime(game.playtime_2weeks).toFixed(1)}
+          </span>
+          {" hour(s) in the last "}
+          <span className={classes.strong}>two weeks</span>
         </Typography>
         <Typography
           variant="body2"
@@ -77,12 +70,26 @@ export default function GameCard({
           component="p"
           gutterBottom
         >
-          Played for:{" "}
+          {"Played "}
           <span className={classes.strong}>
-            {formatPlaytime(playtimeForever).toFixed(1) + " hour(s)"}
-          </span>{" "}
-          in total
+            {formatPlaytime(game.playtime_forever).toFixed(1)}
+          </span>
+          {" hour(s) in "}
+          <span className={classes.strong}>total</span>
         </Typography>
+        <CardActions className={classes.button}>
+          <Button
+            variant="contained"
+            endIcon={<FaSteam />}
+            size="small"
+            color="primary"
+            href={StoreGameURL}
+            target="_blank"
+            rel="noopener"
+          >
+            Check it out on Steam
+          </Button>
+        </CardActions>
       </CardContent>
     </Card>
   );
