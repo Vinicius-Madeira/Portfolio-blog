@@ -17,11 +17,13 @@ const useStyles = makeStyles((theme: Theme) =>
       marginBottom: 20,
     },
     breadcrumb: {
+      display: "flex",
+      margin: "auto",
       "& :hover > *:is(:hover)": {
         textDecoration: "underline",
       },
-      "&.active > *:is(active)": {
-        color: "#aa0000",
+      "& :active > *:is(:active)": {
+        opacity: 0.8,
       },
     },
     link: {
@@ -36,6 +38,7 @@ const useStyles = makeStyles((theme: Theme) =>
   })
 );
 
+// Checks each routeName and provides an icon element to it
 function getRouteIcon(name: RouteName): ReactElement {
   switch (name) {
     case RouteName.HOME:

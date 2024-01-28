@@ -45,7 +45,7 @@ export default function GameCard({ game }: GameCardProps) {
         component="img"
         alt={`${game.name} Banner`}
         image={bannerURL}
-        title={`${game.name} Banner`}
+        title={`${game.name}`}
       />
       <CardContent>
         <Typography variant="h5" component="h2" noWrap gutterBottom>
@@ -57,7 +57,7 @@ export default function GameCard({ game }: GameCardProps) {
           component="p"
           gutterBottom
         >
-          {"Played "}
+          {"Played for "}
           <span className={classes.strong}>
             {formatPlaytime(game.playtime_2weeks).toFixed(1)}
           </span>
@@ -70,7 +70,7 @@ export default function GameCard({ game }: GameCardProps) {
           component="p"
           gutterBottom
         >
-          {"Played "}
+          {"Played for "}
           <span className={classes.strong}>
             {formatPlaytime(game.playtime_forever).toFixed(1)}
           </span>
