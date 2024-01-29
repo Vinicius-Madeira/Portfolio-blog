@@ -7,17 +7,12 @@ import {
   makeStyles,
 } from "@material-ui/core";
 import RecentGames from "../components/SteamAPI/RecentGames";
-import HobbyCard from "../components/HobbyCard";
-import { hobbies } from "../components/HobbyData";
+import HobbyCard from "../components/Hobbies/HobbyCard";
+import { hobbies } from "../components/Hobbies/HobbyData";
 
 const useStyles = makeStyles({
   container: {
     justifyContent: "space-evenly",
-  },
-  title: {
-    align: "center",
-    color: "primary",
-    gutterBottom: true,
   },
 });
 
@@ -30,13 +25,13 @@ export default function Hobbies() {
           <Card variant="elevation" elevation={5}>
             {/* TODO -> Add background to the card using classes */}
             <CardHeader
-              title={"What I'm playing..."}
+              title={"Gaming"}
               titleTypographyProps={{
                 align: "center",
                 color: "primary",
                 gutterBottom: true,
               }}
-              subheader={"These are my top games at the moment"}
+              subheader={"My top games at the moment"}
               subheaderTypographyProps={{ variant: "body2", align: "center" }}
             />
             <CardContent>
@@ -48,15 +43,13 @@ export default function Hobbies() {
         <Grid item md={12}>
           <Card variant="elevation" elevation={5}>
             <CardHeader
-              title={"What I' learning..."}
+              title={"Study"}
               titleTypographyProps={{
                 align: "center",
                 color: "primary",
                 gutterBottom: true,
               }}
-              subheader={
-                "I study a variety of things at the same time but these are the main ones right now"
-              }
+              subheader={"Some of the things I've been studying"}
               subheaderTypographyProps={{
                 variant: "body2",
                 align: "center",

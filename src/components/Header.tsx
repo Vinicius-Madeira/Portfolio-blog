@@ -27,6 +27,7 @@ const useStyles = makeStyles((theme: Theme) =>
       },
     },
     link: {
+      color: theme.palette.common.black,
       display: "flex",
       textDecoration: "none",
       "& :first-child": {
