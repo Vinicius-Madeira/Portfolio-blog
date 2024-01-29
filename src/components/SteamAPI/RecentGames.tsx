@@ -1,3 +1,7 @@
+import { baseApiURL, key, userID, ResponseData, Game } from "./SteamData";
+import { useQuery } from "@tanstack/react-query";
+import axios from "axios";
+import GameCard from "./GameCard";
 import {
   Backdrop,
   CircularProgress,
@@ -7,10 +11,6 @@ import {
   createStyles,
   makeStyles,
 } from "@material-ui/core";
-import { useQuery } from "@tanstack/react-query";
-import { baseApiURL, key, userID, ResponseData, Game } from "./Data";
-import axios from "axios";
-import GameCard from "./GameCard";
 
 const fullURL = `${baseApiURL}${key}&steamid=${userID}`;
 
@@ -19,6 +19,9 @@ const useStyles = makeStyles((theme: Theme) =>
     backdrop: {
       zIndex: theme.zIndex.drawer + 1,
       color: "#fff",
+    },
+    container: {
+      justifyContent: "space-evenly",
     },
   })
 );
@@ -48,7 +51,7 @@ export default function RecentGames() {
 
   return (
     <Container>
-      <Grid container>
+      <Grid container spacing={2} className={classes.container}>
         {resp.response.games.map((game: Game) => (
           <Grid item key={game.appid} md={4}>
             <GameCard game={game} />

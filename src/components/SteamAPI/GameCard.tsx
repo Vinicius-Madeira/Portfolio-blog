@@ -1,4 +1,4 @@
-import { baseMediaURL, baseStoreURL, formatPlaytime, Game } from "./Data";
+import { baseMediaURL, baseStoreURL, formatPlaytime, Game } from "./SteamData";
 import { FaSteam } from "react-icons/fa";
 import {
   Button,
@@ -18,11 +18,8 @@ interface GameCardProps {
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
-    root: {
-      maxWidth: 345,
-    },
     media: {
-      height: 140,
+      height: 150,
     },
     strong: {
       color: theme.palette.secondary.main,
@@ -39,7 +36,7 @@ export default function GameCard({ game }: GameCardProps) {
   const StoreGameURL = `${baseStoreURL}/${game.appid}`;
 
   return (
-    <Card variant="outlined" className={classes.root}>
+    <Card variant="outlined">
       <CardMedia
         className={classes.media}
         component="img"
