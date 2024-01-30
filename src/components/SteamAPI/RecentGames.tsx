@@ -29,7 +29,7 @@ const useStyles = makeStyles((theme: Theme) =>
 export default function RecentGames() {
   const classes = useStyles();
   let resp: ResponseData;
-  const { isLoading, data } = useQuery({
+  const { data, isLoading } = useQuery({
     queryKey: ["games"],
     queryFn: () =>
       axios.get(fullURL).then((response) => {

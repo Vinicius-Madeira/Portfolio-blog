@@ -23,7 +23,6 @@ export default function Hobbies() {
       <Grid container spacing={2}>
         <Grid item md={12}>
           <Card variant="elevation" elevation={5}>
-            {/* TODO -> Add background to the card using classes */}
             <CardHeader
               title={"Gaming"}
               titleTypographyProps={{
