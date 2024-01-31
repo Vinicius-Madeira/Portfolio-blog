@@ -7,7 +7,7 @@ interface MusicCardProps {
 
 export default function MusicCard({ genre }: MusicCardProps) {
   return (
-    <Card>
+    <Card elevation={0}>
       <div>
         <CardContent>
           <Typography variant="h5" gutterBottom>

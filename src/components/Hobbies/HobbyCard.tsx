@@ -20,7 +20,7 @@ interface HobbyCardProps {
 export default function HobbyCard({ hobby }: HobbyCardProps) {
   const classes = useStyles();
   return (
-    <Card variant="outlined">
+    <Card elevation={0}>
       <CardMedia
         className={classes.media}
         component="img"

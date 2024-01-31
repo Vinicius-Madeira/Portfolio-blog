@@ -36,7 +36,7 @@ export default function GameCard({ game }: GameCardProps) {
   const StoreGameURL = `${baseStoreURL}/${game.appid}`;
 
   return (
-    <Card variant="outlined">
+    <Card elevation={0}>
       <CardMedia
         className={classes.media}
         component="img"

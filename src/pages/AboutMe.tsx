@@ -51,7 +51,7 @@ export default function AboutMe() {
               <Container>
                 <Grid container spacing={2}>
                   <Grid item md={6}>
-                    <Card className={classes.root}>
+                    <Card className={classes.root} elevation={0}>
                       <div className={classes.details}>
                         <CardContent className={classes.content}>
                           <Typography variant="h5" gutterBottom>
@@ -75,14 +75,14 @@ export default function AboutMe() {
                       <CardMedia
                         className={classes.media}
                         component="img"
-                        image="./unip-logo.jpg"
+                        image="./unip-logo.png"
                         title="UNIP Logo"
                         alt="UNIP Logo"
                       />
                     </Card>
                   </Grid>
                   <Grid item md={6}>
-                    <Card className={classes.root}>
+                    <Card className={classes.root} elevation={0}>
                       <div className={classes.details}>
                         <CardContent className={classes.content}>
                           <Typography variant="h5" gutterBottom>
@@ -127,7 +127,7 @@ export default function AboutMe() {
               <Container>
                 <Grid container spacing={2}>
                   <Grid item md={6}>
-                    <Card className={classes.root}>
+                    <Card className={classes.root} elevation={0}>
                       <div className={classes.details}>
                         <CardContent className={classes.content}>
                           <Typography variant="h5" gutterBottom>
@@ -149,14 +149,14 @@ export default function AboutMe() {
                       <CardMedia
                         className={classes.media}
                         component="img"
-                        image="./unip-logo.jpg"
+                        image="./unip-logo.png"
                         title="UNIP Logo"
                         alt="UNIP Logo"
                       />
                     </Card>
                   </Grid>
                   <Grid item md={6}>
-                    <Card className={classes.root}>
+                    <Card className={classes.root} elevation={0}>
                       <div className={classes.details}>
                         <CardContent className={classes.content}>
                           <Typography variant="h5" gutterBottom>
@@ -174,7 +174,7 @@ export default function AboutMe() {
                       <CardMedia
                         className={classes.media}
                         component="img"
-                        image="./skyone-logo-flat.jpg"
+                        image="./skyone-logo-flat.png"
                         title="Skyone Logo"
                         alt="Skyone Logo"
                       />
@@ -199,7 +199,7 @@ export default function AboutMe() {
               <Container>
                 <Grid container spacing={2}>
                   <Grid item md={4}>
-                    <Card className={classes.root}>
+                    <Card className={classes.root} elevation={0}>
                       <div className={classes.details}>
                         <CardContent className={classes.content}>
                           <Typography variant="h5" gutterBottom>
@@ -215,7 +215,7 @@ export default function AboutMe() {
                     </Card>
                   </Grid>
                   <Grid item md={4}>
-                    <Card className={classes.root}>
+                    <Card className={classes.root} elevation={0}>
                       <div className={classes.details}>
                         <CardContent className={classes.content}>
                           <Typography variant="h5" gutterBottom>
@@ -231,7 +231,7 @@ export default function AboutMe() {
                     </Card>
                   </Grid>
                   <Grid item md={4}>
-                    <Card className={classes.root}>
+                    <Card className={classes.root} elevation={0}>
                       <div className={classes.details}>
                         <CardContent className={classes.content}>
                           <Typography variant="h5" gutterBottom>
@@ -265,7 +265,7 @@ export default function AboutMe() {
               <Container>
                 <Grid container spacing={2}>
                   <Grid item md={4}>
-                    <Card className={classes.root}>
+                    <Card className={classes.root} elevation={0}>
                       <div className={classes.details}>
                         <CardContent className={classes.content}>
                           <Typography variant="h5" gutterBottom>
@@ -281,7 +281,7 @@ export default function AboutMe() {
                     </Card>
                   </Grid>
                   <Grid item md={4}>
-                    <Card className={classes.root}>
+                    <Card className={classes.root} elevation={0}>
                       <div className={classes.details}>
                         <CardContent className={classes.content}>
                           <Typography variant="h5" gutterBottom>
@@ -297,7 +297,7 @@ export default function AboutMe() {
                     </Card>
                   </Grid>
                   <Grid item md={4}>
-                    <Card className={classes.root}>
+                    <Card className={classes.root} elevation={0}>
                       <div className={classes.details}>
                         <CardContent className={classes.content}>
                           <Typography variant="h5" gutterBottom>
