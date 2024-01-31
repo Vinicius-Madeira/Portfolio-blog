@@ -6,34 +6,42 @@ import {
   CircularProgress,
   Container,
   Grid,
-  Theme,
-  createStyles,
+  Typography,
   makeStyles,
 } from "@material-ui/core";
 
 const fullURL = `${baseApiURL}${key}&steamid=${userID}`;
 
-const useStyles = makeStyles((theme: Theme) =>
-  createStyles({
-    container: {
-      justifyContent: "space-evenly",
-    },
-  })
-);
+const useStyles = makeStyles({
+  container: {
+    justifyContent: "space-evenly",
+  },
+});
 
 export default function RecentGames() {
   const classes = useStyles();
   let resp: ResponseData;
-  const { data, isLoading } = useQuery({
+  const { data, isLoading, isError } = useQuery({
     queryKey: ["games"],
     queryFn: () =>
-      axios.get(fullURL).then((response) => {
-        return response.data;
-      }),
-    retry: 2,
-    staleTime: 1000 * 60 * 5,
+      axios
+        .get(fullURL)
+        .then((response) => {
+          return response.data;
+        })
+        .catch(function (error) {
+          console.error(error.toJSON());
+        }),
+    staleTime: 1000 * 60 * 5, // 5 minutes until a new request is made to get updated info
   });
 
+  if (isError) {
+    return (
+      <Typography variant="h5" color="error" align="center">
+        {"It wasn't possible to fetch the data for the games"}
+      </Typography>
+    );
+  }
   if (isLoading) {
     return (
       <div style={{ display: "flex", justifyContent: "center" }}>

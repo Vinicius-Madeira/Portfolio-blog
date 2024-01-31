@@ -6,7 +6,7 @@ import {
   Grid,
   makeStyles,
 } from "@material-ui/core";
-import RecentGames from "../components/SteamAPI/RecentGames";
+import RecentGames from "../components/Hobbies/SteamAPI/RecentGames";
 import HobbyCard from "../components/Hobbies/HobbyCard";
 import { hobbies } from "../components/Hobbies/HobbyData";
 import { genres } from "../components/Hobbies/MusicData";

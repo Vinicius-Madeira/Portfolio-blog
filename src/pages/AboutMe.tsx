@@ -116,7 +116,7 @@ export default function AboutMe() {
         <Grid item md={12}>
           <Card>
             <CardHeader
-              title={"Experiences"}
+              title={"Experience"}
               titleTypographyProps={{
                 align: "center",
                 color: "primary",
@@ -240,6 +240,72 @@ export default function AboutMe() {
                           <Typography variant="subtitle1" color="textSecondary">
                             {
                               "Knowledge in the versioning tool Git, MySQL and PostgreSQL databases, linux-based systems, and SOLID design pattern."
+                            }
+                          </Typography>
+                        </CardContent>
+                      </div>
+                    </Card>
+                  </Grid>
+                </Grid>
+              </Container>
+            </CardContent>
+          </Card>
+        </Grid>
+        <Grid item md={12}>
+          <Card>
+            <CardHeader
+              title={"Curiosity"}
+              titleTypographyProps={{
+                align: "center",
+                color: "primary",
+                gutterBottom: true,
+              }}
+            />
+            <CardContent>
+              <Container>
+                <Grid container spacing={2}>
+                  <Grid item md={4}>
+                    <Card className={classes.root}>
+                      <div className={classes.details}>
+                        <CardContent className={classes.content}>
+                          <Typography variant="h5" gutterBottom>
+                            {"Favorite Artists"}
+                          </Typography>
+                          <Typography variant="subtitle1" color="textSecondary">
+                            {
+                              "My favorite band is twenty one pilots, but at the moment I'm really into Eve and 米津玄師."
+                            }
+                          </Typography>
+                        </CardContent>
+                      </div>
+                    </Card>
+                  </Grid>
+                  <Grid item md={4}>
+                    <Card className={classes.root}>
+                      <div className={classes.details}>
+                        <CardContent className={classes.content}>
+                          <Typography variant="h5" gutterBottom>
+                            {"Favorite Foods"}
+                          </Typography>
+                          <Typography variant="subtitle1" color="textSecondary">
+                            {
+                              "My favorite dishes are Parmegiana, meat/chicken Pancakes and Lasagna."
+                            }
+                          </Typography>
+                        </CardContent>
+                      </div>
+                    </Card>
+                  </Grid>
+                  <Grid item md={4}>
+                    <Card className={classes.root}>
+                      <div className={classes.details}>
+                        <CardContent className={classes.content}>
+                          <Typography variant="h5" gutterBottom>
+                            {"Favorite Shows"}
+                          </Typography>
+                          <Typography variant="subtitle1" color="textSecondary">
+                            {
+                              "My favorite shows are Brooklyn nine-nine, Avatar: the last airbender and One Piece."
                             }
                           </Typography>
                         </CardContent>
