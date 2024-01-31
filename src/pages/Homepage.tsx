@@ -1,13 +1,15 @@
 import {
+  Button,
   Card,
   CardContent,
-  CardHeader,
-  CardMedia,
   Container,
   Grid,
+  ImageList,
+  ImageListItem,
   Typography,
   makeStyles,
 } from "@material-ui/core";
+import CallMadeIcon from "@material-ui/icons/CallMade";
 
 const useStyles = makeStyles((theme) => {
   return {
@@ -18,27 +20,18 @@ const useStyles = makeStyles((theme) => {
       display: "flex",
       justifyContent: "center",
     },
-    text: {
-      width: "55%",
-    },
-    name: {
-      color: theme.palette.secondary.main,
-    },
-    card: {
-      display: "flex",
-    },
-    details: {
-      display: "flex",
-      flexDirection: "column",
-    },
-    content: {
-      flex: "1 0 auto",
-    },
-    media: {
-      width: 150,
-    },
+    text: { width: "100%" },
     strong: {
-      color: theme.palette.secondary.main,
+      color: theme.palette.primary.main,
+    },
+    test: {
+      position: "absolute",
+      inset: "33% 0 33% 0",
+    },
+    buttons: {
+      marginInline: 10,
+      display: "flex",
+      gap: 16,
     },
   };
 });
@@ -46,64 +39,90 @@ const useStyles = makeStyles((theme) => {
 export default function Homepage() {
   const classes = useStyles();
   return (
-    <div className={classes.root}>
-      <Grid container spacing={2}>
-        <Grid item md={12}>
-          <div className={classes.toolbar}>
-            <Typography
-              className={classes.text}
-              variant="h2"
-              component={"h1"}
-              color="textPrimary"
-            >
-              Olá! Sou <span className={classes.name}>Vinicius Madeira</span>,
-              desenvolvedor front-end
-            </Typography>
-          </div>
-        </Grid>
-        <Grid item md={6}>
-          <Card>
-            <CardHeader
-              title={"Experiências"}
-              titleTypographyProps={{
-                align: "center",
-                color: "primary",
-                gutterBottom: true,
-              }}
-            />
+    <Container className={classes.test} style={{ scrollbarGutter: "stable" }}>
+      <Card
+        style={{
+          boxShadow: "none",
+          backgroundColor: "inherit",
+        }}
+      >
+        <Grid container spacing={2}>
+          <Grid item md={7}>
             <CardContent>
-              <Container>
-                <Grid container spacing={2}>
-                  <Grid item md={12}>
-                    <Card className={classes.card}>
-                      <div className={classes.details}>
-                        <CardContent className={classes.content}>
-                          <Typography variant="h5" gutterBottom>
-                            Vinicius
-                          </Typography>
-                          <Typography variant="subtitle1" color="textSecondary">
-                            Minha experiência profissional se inicia na{" "}
-                            <span className={classes.strong}>Skyone</span> em
-                            setembro de 2023 como estagiário em desenvolvimento{" "}
-                            <span className={classes.strong}>front-end</span>.
-                          </Typography>
-                        </CardContent>
-                      </div>
-                      <CardMedia
-                        className={classes.media}
-                        component="img"
-                        image="./Foto1.jpg"
-                        title="Foto 1"
-                        alt="Foto 1"
-                      />
-                    </Card>
-                  </Grid>
-                </Grid>
-              </Container>
+              <Typography
+                className={classes.text}
+                variant="h2"
+                component={"h1"}
+                color="textPrimary"
+              >
+                Hi, I'm <span className={classes.strong}>Vinicius Madeira</span>
+              </Typography>
+              <Typography
+                className={classes.text}
+                variant="h6"
+                component={"p"}
+                color="textSecondary"
+                gutterBottom
+              >
+                {"Front-end Developer"}
+              </Typography>
+              <Typography
+                className={classes.text}
+                style={{ fontWeight: 400 }}
+                variant="h6"
+                component={"p"}
+                color="textSecondary"
+                gutterBottom
+              >
+                {
+                  "I'm 23 years old, currently an intern at an IT company and undergraduate student in System Analysis and Development. I'm very passionate about learning new techonologies and overall stuff about life."
+                }
+              </Typography>
+              <Typography
+                className={classes.text}
+                style={{ fontWeight: 400, marginTop: 16 }}
+                variant="body1"
+                component={"p"}
+                color="textSecondary"
+              >
+                {
+                  "If you wanna know more about me feel free to check out my other pages where you can see more about my education and stuff that I do on my free time."
+                }
+              </Typography>
             </CardContent>
-          </Card>
+            <div className={classes.buttons}>
+              <Button
+                variant="outlined"
+                color="primary"
+                endIcon={<CallMadeIcon />}
+              >
+                About me
+              </Button>
+              <Button
+                variant="outlined"
+                color="primary"
+                endIcon={<CallMadeIcon />}
+              >
+                Hobbies
+              </Button>
+            </div>
+          </Grid>
+
+          <Grid item md={5}>
+            <ImageList rowHeight={160} cols={5}>
+              <ImageListItem cols={1}>
+                <img src="./Foto3.jpg" alt={"Foto 3"} />
+              </ImageListItem>
+              <ImageListItem cols={2}>
+                <img src="./Foto2.jpg" alt={"Foto 2"} />
+              </ImageListItem>
+              <ImageListItem cols={3}>
+                <img src="./Foto4.jpg" alt={"Foto 4"} />
+              </ImageListItem>
+            </ImageList>
+          </Grid>
         </Grid>
-      </Grid>
-    </div>
+      </Card>
+    </Container>
   );
 }

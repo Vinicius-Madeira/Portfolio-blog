@@ -22,7 +22,7 @@ const useStyles = makeStyles((theme: Theme) =>
       height: 150,
     },
     strong: {
-      color: theme.palette.secondary.main,
+      color: theme.palette.primary.main,
     },
     button: {
       padding: "8px 0",

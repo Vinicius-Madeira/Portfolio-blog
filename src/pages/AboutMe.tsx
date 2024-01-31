@@ -27,7 +27,7 @@ const useStyles = makeStyles((theme: Theme) =>
       width: 150,
     },
     strong: {
-      color: theme.palette.secondary.main,
+      color: theme.palette.primary.main,
     },
   })
 );
@@ -204,7 +204,7 @@ export default function AboutMe() {
                           </Typography>
                           <Typography variant="subtitle1" color="textSecondary">
                             {
-                              "Conhecimento nas linguagens HTML, CSS, Javascript e Typescript, e das bibliotecas React e Material-UI"
+                              "Conhecimento nas linguagens HTML, CSS, Javascript e Typescript, e das bibliotecas React e Material-UI."
                             }
                           </Typography>
                         </CardContent>
@@ -220,7 +220,7 @@ export default function AboutMe() {
                           </Typography>
                           <Typography variant="subtitle1" color="textSecondary">
                             {
-                              "Conhecimento primário nas linguagens de programação Java e Go, e os frameworks Spring e Spring Boot"
+                              "Conhecimento primário nas linguagens de programação Java e Go, e os frameworks Spring e Spring Boot."
                             }
                           </Typography>
                         </CardContent>

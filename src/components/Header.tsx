@@ -25,7 +25,7 @@ const useStyles = makeStyles((theme: Theme) =>
       margin: "auto",
       "& :hover > a:is(:hover)": {
         textDecoration: "underline",
-        textDecorationColor: theme.palette.secondary.main,
+        textDecorationColor: theme.palette.primary.main,
         textUnderlineOffset: "3px",
         textDecorationThickness: "2px",
       },
@@ -47,7 +47,7 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     active: {
       textDecoration: "underline",
-      textDecorationColor: theme.palette.secondary.light,
+      textDecorationColor: theme.palette.primary.light,
       textUnderlineOffset: "3px",
       textDecorationThickness: "2px",
     },
@@ -83,7 +83,7 @@ export default function Header() {
   const location = useLocation();
   return (
     <div className={classes.root}>
-      <AppBar position="fixed">
+      <AppBar position="fixed" color="default" style={{ boxShadow: "none" }}>
         <Toolbar variant="dense" className={classes.wrapper}>
           <Tooltip title="Vinicius Madeira" arrow placement="right">
             <Avatar src="./Foto1.jpg" alt="Me" />
