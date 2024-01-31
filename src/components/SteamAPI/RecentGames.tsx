@@ -3,7 +3,6 @@ import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 import GameCard from "./GameCard";
 import {
-  Backdrop,
   CircularProgress,
   Container,
   Grid,
@@ -16,10 +15,6 @@ const fullURL = `${baseApiURL}${key}&steamid=${userID}`;
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
-    backdrop: {
-      zIndex: theme.zIndex.drawer + 1,
-      color: "#fff",
-    },
     container: {
       justifyContent: "space-evenly",
     },
@@ -41,9 +36,9 @@ export default function RecentGames() {
 
   if (isLoading) {
     return (
-      <Backdrop className={classes.backdrop} open={true}>
+      <div style={{ display: "flex", justifyContent: "center" }}>
         <CircularProgress color={"primary"} />
-      </Backdrop>
+      </div>
     );
   } else {
     resp = data;
@@ -52,8 +47,8 @@ export default function RecentGames() {
   return (
     <Container>
       <Grid container spacing={2} className={classes.container}>
-        {resp.response.games.map((game: Game) => (
-          <Grid item key={game.appid} md={4}>
+        {resp?.response?.games?.map((game: Game) => (
+          <Grid item key={game?.appid} md={4}>
             <GameCard game={game} />
           </Grid>
         ))}

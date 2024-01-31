@@ -84,7 +84,7 @@ export default function GameCard({ game }: GameCardProps) {
             target="_blank"
             rel="noopener"
           >
-            Check it out on Steam
+            {"Check it out on Steam"}
           </Button>
         </CardActions>
       </CardContent>
