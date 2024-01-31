@@ -15,7 +15,7 @@ Simple step-by-step guide to download and run the project.
 1. Clone the GitHub project.
 
 ```console
-git clone git@github.com:Vinicius-Madeira/Portfolio-blog.git
+git clone https://github.com/Vinicius-Madeira/Portfolio-blog.git
 ```
 
 2. Go into the project's directory.
