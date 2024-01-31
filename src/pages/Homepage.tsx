@@ -10,6 +10,7 @@ import {
   makeStyles,
 } from "@material-ui/core";
 import CallMadeIcon from "@material-ui/icons/CallMade";
+import { Link } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => {
   return {
@@ -90,21 +91,27 @@ export default function Homepage() {
                 }
               </Typography>
             </CardContent>
+
             <div className={classes.buttons}>
-              <Button
-                variant="outlined"
-                color="primary"
-                endIcon={<CallMadeIcon />}
-              >
-                About me
-              </Button>
-              <Button
-                variant="outlined"
-                color="primary"
-                endIcon={<CallMadeIcon />}
-              >
-                Hobbies
-              </Button>
+              <Link to="/about">
+                <Button
+                  variant="outlined"
+                  color="primary"
+                  endIcon={<CallMadeIcon />}
+                >
+                  {"About me"}
+                </Button>
+              </Link>
+
+              <Link to="/hobbies">
+                <Button
+                  variant="outlined"
+                  color="primary"
+                  endIcon={<CallMadeIcon />}
+                >
+                  {"Hobbies"}
+                </Button>
+              </Link>
             </div>
           </Grid>
 

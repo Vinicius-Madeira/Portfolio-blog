@@ -40,7 +40,7 @@ export default function AboutMe() {
         <Grid item md={12}>
           <Card>
             <CardHeader
-              title={"Formação acadêmica"}
+              title={"Education"}
               titleTypographyProps={{
                 align: "center",
                 color: "primary",
@@ -55,16 +55,18 @@ export default function AboutMe() {
                       <div className={classes.details}>
                         <CardContent className={classes.content}>
                           <Typography variant="h5" gutterBottom>
-                            UNIP
+                            {"UNIP"}
                           </Typography>
                           <Typography variant="subtitle1" color="textSecondary">
-                            Minha primeira graduação foi em{" "}
-                            <span className={classes.strong}>Biomedina</span> na
-                            Universidade Paulista (UNIP). Iniciei o curso em
-                            2018, logo após concluir o ensino médio, e o concluí
-                            em 2021 como biomédico bacharel habilitado em{" "}
+                            {"My first undegraduate course was in "}
                             <span className={classes.strong}>
-                              análises clínicas
+                              {"Biomedical Sciences "}
+                            </span>
+                            {
+                              "at Universidade Paulista. I started it in 2018 and finished in 2021 as a bachelor's adepted in "
+                            }
+                            <span className={classes.strong}>
+                              {"clinical analysis"}
                             </span>
                             .
                           </Typography>
@@ -84,17 +86,16 @@ export default function AboutMe() {
                       <div className={classes.details}>
                         <CardContent className={classes.content}>
                           <Typography variant="h5" gutterBottom>
-                            Mackenzie
+                            {"Mackenzie"}
                           </Typography>
                           <Typography variant="subtitle1" color="textSecondary">
-                            Iniciei minha segunda graduação em 2023 no curso de{" "}
+                            {"I started my second undergrad course in 2023 in "}
                             <span className={classes.strong}>
-                              Análise e desenvolvimento de sistemas
+                              {"System Analysis and Development, "}
                             </span>
-                            {", "}
-                            na Universidade Presbiteriana Mackenzie. Atualmente
-                            estou iniciando o 3º semestre letivo com previsão de
-                            término para junho de 2025.
+                            {
+                              "at Universidade Presbiteriana Mackenzie. I'm currently at the 3rd semester, and expected conclusion is june 2025. "
+                            }
                           </Typography>
                         </CardContent>
                       </div>
@@ -115,7 +116,7 @@ export default function AboutMe() {
         <Grid item md={12}>
           <Card>
             <CardHeader
-              title={"Experiências"}
+              title={"Experiences"}
               titleTypographyProps={{
                 align: "center",
                 color: "primary",
@@ -130,16 +131,18 @@ export default function AboutMe() {
                       <div className={classes.details}>
                         <CardContent className={classes.content}>
                           <Typography variant="h5" gutterBottom>
-                            UNIP
+                            {"UNIP"}
                           </Typography>
                           <Typography variant="subtitle1" color="textSecondary">
-                            Minha experiência profissional se inicia na{" "}
-                            <span className={classes.strong}>UNIP</span> em
-                            janeiro de 2021 como estagiário em{" "}
+                            {"My very first professional experience began at "}
                             <span className={classes.strong}>
-                              análises clínicas
+                              {"UNIP"}
+                            </span>{" "}
+                            {" in january 2021 as an intern in "}
+                            <span className={classes.strong}>
+                              {"clinical analysis"}
                             </span>
-                            .
+                            {" and ended in december 2021."}
                           </Typography>
                         </CardContent>
                       </div>
@@ -157,14 +160,14 @@ export default function AboutMe() {
                       <div className={classes.details}>
                         <CardContent className={classes.content}>
                           <Typography variant="h5" gutterBottom>
-                            Skyone
+                            {"Skyone"}
                           </Typography>
                           <Typography variant="subtitle1" color="textSecondary">
-                            Minha experiência na{" "}
-                            <span className={classes.strong}>Skyone</span> em
-                            setembro de 2023 como estagiário em desenvolvimento{" "}
-                            <span className={classes.strong}>front-end</span> e
-                            é onde estou atuando no momento.
+                            {"My experience at "}
+                            <span className={classes.strong}>{"Skyone"}</span>
+                            {" began in september 2023 as an intern in "}
+                            <span className={classes.strong}>front-end</span>
+                            {" development and that's where I'm currently at."}
                           </Typography>
                         </CardContent>
                       </div>
@@ -185,7 +188,7 @@ export default function AboutMe() {
         <Grid item md={12}>
           <Card>
             <CardHeader
-              title={"Conhecimentos"}
+              title={"Knowledge"}
               titleTypographyProps={{
                 align: "center",
                 color: "primary",
@@ -204,7 +207,7 @@ export default function AboutMe() {
                           </Typography>
                           <Typography variant="subtitle1" color="textSecondary">
                             {
-                              "Conhecimento nas linguagens HTML, CSS, Javascript e Typescript, e das bibliotecas React e Material-UI."
+                              "Knowledge in the languages HTML, CSS Javascript, Typescript, and the libraries React and Material-UI."
                             }
                           </Typography>
                         </CardContent>
@@ -220,7 +223,7 @@ export default function AboutMe() {
                           </Typography>
                           <Typography variant="subtitle1" color="textSecondary">
                             {
-                              "Conhecimento primário nas linguagens de programação Java e Go, e os frameworks Spring e Spring Boot."
+                              "Primary knowledge in the programming languages Java, Go, and the frameworks Spring and Spring Boot."
                             }
                           </Typography>
                         </CardContent>
@@ -232,11 +235,11 @@ export default function AboutMe() {
                       <div className={classes.details}>
                         <CardContent className={classes.content}>
                           <Typography variant="h5" gutterBottom>
-                            {"Diversos"}
+                            {"Others"}
                           </Typography>
                           <Typography variant="subtitle1" color="textSecondary">
                             {
-                              "Conhecimento na ferramenta versionamento Git, bancos de dados MySQL e PostgreSQL, sistemas Linux, e padrão de design SOLID.  "
+                              "Knowledge in the versioning tool Git, MySQL and PostgreSQL databases, linux-based systems, and SOLID design pattern."
                             }
                           </Typography>
                         </CardContent>

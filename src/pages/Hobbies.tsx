@@ -9,6 +9,8 @@ import {
 import RecentGames from "../components/SteamAPI/RecentGames";
 import HobbyCard from "../components/Hobbies/HobbyCard";
 import { hobbies } from "../components/Hobbies/HobbyData";
+import { genres } from "../components/Hobbies/MusicData";
+import MusicCard from "../components/Hobbies/MusicCard";
 
 const useStyles = makeStyles({
   container: {
@@ -48,7 +50,7 @@ export default function Hobbies() {
                 color: "primary",
                 gutterBottom: true,
               }}
-              subheader={"Some of the things I've been studying"}
+              subheader={"Some of the stuff I've been studying"}
               subheaderTypographyProps={{
                 variant: "body2",
                 align: "center",
@@ -60,6 +62,35 @@ export default function Hobbies() {
                   {hobbies.map((hobby) => (
                     <Grid item key={hobby.title} md={4}>
                       <HobbyCard hobby={hobby} />
+                    </Grid>
+                  ))}
+                </Grid>
+              </Container>
+            </CardContent>
+          </Card>
+        </Grid>
+
+        <Grid item md={12}>
+          <Card variant="elevation" elevation={5}>
+            <CardHeader
+              title={"Music"}
+              titleTypographyProps={{
+                align: "center",
+                color: "primary",
+                gutterBottom: true,
+              }}
+              subheader={"Some genres that I listen quite alot"}
+              subheaderTypographyProps={{
+                variant: "body2",
+                align: "center",
+              }}
+            />
+            <CardContent>
+              <Container>
+                <Grid container spacing={2} className={classes.container}>
+                  {genres.map((genre) => (
+                    <Grid item key={genre.title} md={4}>
+                      <MusicCard genre={genre} />
                     </Grid>
                   ))}
                 </Grid>
