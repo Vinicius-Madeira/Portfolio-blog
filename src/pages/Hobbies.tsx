@@ -24,7 +24,7 @@ export default function Hobbies() {
     <Container>
       <Grid container spacing={2}>
         <Grid item md={12}>
-          <Card variant="elevation" elevation={5}>
+          <Card variant="elevation">
             <CardHeader
               title={"Gaming"}
               titleTypographyProps={{
@@ -42,7 +42,7 @@ export default function Hobbies() {
         </Grid>
 
         <Grid item md={12}>
-          <Card variant="elevation" elevation={5}>
+          <Card variant="elevation">
             <CardHeader
               title={"Study"}
               titleTypographyProps={{
@@ -71,7 +71,7 @@ export default function Hobbies() {
         </Grid>
 
         <Grid item md={12}>
-          <Card variant="elevation" elevation={5}>
+          <Card variant="elevation">
             <CardHeader
               title={"Music"}
               titleTypographyProps={{

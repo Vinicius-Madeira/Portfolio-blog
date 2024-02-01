@@ -174,7 +174,7 @@ export default function AboutMe() {
                       <CardMedia
                         className={classes.media}
                         component="img"
-                        image="./skyone-logo-flat.png"
+                        image="./skyone-logo2.png"
                         title="Skyone Logo"
                         alt="Skyone Logo"
                       />

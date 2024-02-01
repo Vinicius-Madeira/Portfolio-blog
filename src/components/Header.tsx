@@ -10,8 +10,6 @@ import EmojiPeopleIcon from "@material-ui/icons/EmojiPeople";
 import CodeIcon from "@material-ui/icons/Code";
 import { ReactElement } from "react";
 import { GitHub, Instagram, LinkedIn } from "@material-ui/icons";
-import { useQuery } from "@tanstack/react-query";
-import axios from "axios";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -79,26 +77,10 @@ function getRouteIcon(name: RouteName): ReactElement {
   }
 }
 
-const worldTimeURL = "http://worldtimeapi.org/api/timezone/America/Sao_Paulo";
-
 export default function Header() {
   const classes = useStyles();
   const navigate = useNavigate();
   const location = useLocation();
-
-  const { data } = useQuery({
-    queryKey: ["time"],
-    queryFn: () =>
-      axios
-        .get(worldTimeURL)
-        .then((response) => {
-          return response.data;
-        })
-        .catch(function (error) {
-          console.error(error.toJSON());
-        }),
-    refetchInterval: 800,
-  });
 
   return (
     <div className={classes.root}>
@@ -111,9 +93,9 @@ export default function Header() {
           <Tooltip title="Vinicius Madeira" arrow placement="right">
             <Avatar src="./Foto1.jpg" alt="Me" />
           </Tooltip>
-          <Typography style={{ position: "absolute", left: 80 }}>{`${new Date(
-            data?.datetime
-          ).toLocaleTimeString("pt-br")}`}</Typography>
+          <Typography style={{ position: "absolute", left: 80 }}>
+            Vinicius Madeira
+          </Typography>
           <Breadcrumbs aria-label="breadcrumb" className={classes.breadcrumb}>
             {routes.map((route) => {
               return (
