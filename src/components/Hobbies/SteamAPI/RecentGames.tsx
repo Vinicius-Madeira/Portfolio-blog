@@ -1,4 +1,4 @@
-import { baseApiURL, key, userID, ResponseData, Game } from "./SteamData";
+import { ResponseData, Game } from "./SteamData";
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 import GameCard from "./GameCard";
@@ -10,13 +10,13 @@ import {
   makeStyles,
 } from "@material-ui/core";
 
-const fullURL = `${baseApiURL}${key}&steamid=${userID}`;
-
 const useStyles = makeStyles({
   container: {
     justifyContent: "space-evenly",
   },
 });
+
+const localServer = "http://localhost:8000";
 
 export default function RecentGames() {
   const classes = useStyles();
@@ -25,7 +25,7 @@ export default function RecentGames() {
     queryKey: ["games"],
     queryFn: () =>
       axios
-        .get(fullURL)
+        .get(localServer)
         .then((response) => {
           return response.data;
         })
@@ -55,11 +55,13 @@ export default function RecentGames() {
   return (
     <Container>
       <Grid container spacing={2} className={classes.container}>
-        {resp?.response?.games?.map((game: Game) => (
-          <Grid item key={game?.appid} md={4}>
-            <GameCard game={game} />
-          </Grid>
-        ))}
+        {resp?.response?.games
+          ?.filter((game) => game.appid !== 730)
+          .map((game: Game) => (
+            <Grid item key={game?.appid} md={4}>
+              <GameCard game={game} />
+            </Grid>
+          ))}
       </Grid>
     </Container>
   );
