@@ -1,16 +1,8 @@
-import {
-  Card,
-  CardContent,
-  CardHeader,
-  Container,
-  Grid,
-  makeStyles,
-} from "@material-ui/core";
+import { Container, Grid, makeStyles } from "@material-ui/core";
 import RecentGames from "../components/Hobbies/SteamAPI/RecentGames";
 import HobbyCard from "../components/Hobbies/HobbyCard";
-import { hobbies } from "../components/Hobbies/HobbyData";
-import { genres } from "../components/Hobbies/MusicData";
-import MusicCard from "../components/Hobbies/MusicCard";
+import { studies, genres } from "../components/Hobbies/HobbyData";
+import CardItem from "../components/Hobbies/CardItem";
 
 const useStyles = makeStyles({
   container: {
@@ -24,79 +16,43 @@ export default function Hobbies() {
     <Container>
       <Grid container spacing={2}>
         <Grid item md={12}>
-          <Card variant="elevation">
-            <CardHeader
-              title={"Gaming"}
-              titleTypographyProps={{
-                align: "center",
-                color: "primary",
-                gutterBottom: true,
-              }}
-              subheader={"My top games at the moment"}
-              subheaderTypographyProps={{ variant: "body2", align: "center" }}
-            />
-            <CardContent>
-              <RecentGames />
-            </CardContent>
-          </Card>
+          <CardItem title={"Gaming"} subheader={"My top games at the moment"}>
+            <RecentGames />
+          </CardItem>
         </Grid>
 
         <Grid item md={12}>
-          <Card variant="elevation">
-            <CardHeader
-              title={"Study"}
-              titleTypographyProps={{
-                align: "center",
-                color: "primary",
-                gutterBottom: true,
-              }}
-              subheader={"Some of the stuff I've been studying"}
-              subheaderTypographyProps={{
-                variant: "body2",
-                align: "center",
-              }}
-            />
-            <CardContent>
-              <Container>
-                <Grid container spacing={2} className={classes.container}>
-                  {hobbies.map((hobby) => (
-                    <Grid item key={hobby.title} md={4}>
-                      <HobbyCard hobby={hobby} />
-                    </Grid>
-                  ))}
-                </Grid>
-              </Container>
-            </CardContent>
-          </Card>
+          <CardItem
+            title={"Study"}
+            subheader={"Some of the stuff I've been studying"}
+          >
+            <Container>
+              <Grid container spacing={2} className={classes.container}>
+                {studies.map((hobby) => (
+                  <Grid item key={hobby.title} md={4}>
+                    <HobbyCard hobby={hobby} />
+                  </Grid>
+                ))}
+              </Grid>
+            </Container>
+          </CardItem>
         </Grid>
 
         <Grid item md={12}>
-          <Card variant="elevation">
-            <CardHeader
-              title={"Music"}
-              titleTypographyProps={{
-                align: "center",
-                color: "primary",
-                gutterBottom: true,
-              }}
-              subheader={"Some genres that I listen quite alot"}
-              subheaderTypographyProps={{
-                variant: "body2",
-                align: "center",
-              }}
-            />
-            <CardContent>
-              <Container>
-                <Grid container spacing={2} className={classes.container}>
-                  {genres.map((genre) => (
-                    <Grid item key={genre.title} md={4}>
-                      <MusicCard genre={genre} />
-                    </Grid>
-                  ))}
-                </Grid>
-              </Container>
-            </CardContent>
-          </Card>
+          <CardItem
+            title={"Music"}
+            subheader={"Some genres that I listen quite alot"}
+          >
+            <Container>
+              <Grid container spacing={2} className={classes.container}>
+                {genres.map((genre) => (
+                  <Grid item key={genre.title} md={4}>
+                    <HobbyCard hobby={genre} />
+                  </Grid>
+                ))}
+              </Grid>
+            </Container>
+          </CardItem>
         </Grid>
       </Grid>
     </Container>
