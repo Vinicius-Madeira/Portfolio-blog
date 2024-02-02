@@ -9,7 +9,7 @@ export const studies: Hobby[] = [
   {
     imgSrc: "https://img.freepik.com/premium-vector/japan-flag_592324-6958.jpg",
     imgTitle: "Japan's Flag",
-    title: `Japanese / 日本語`,
+    title: "Japanese / 日本語",
     body: `I started learning Japanese back in 2018. 
        I've always liked Japan and japanese culture, especially watching anime.`,
   },

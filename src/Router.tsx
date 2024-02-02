@@ -40,9 +40,9 @@ export default function Router() {
       {routes.map((route) => {
         return (
           <ReactRoute
-            key={route.name}
-            path={route.path}
-            element={route.element}
+            key={route?.name}
+            path={route?.path}
+            element={route?.element}
           />
         );
       })}

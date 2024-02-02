@@ -1,17 +1,8 @@
-import { makeStyles } from "@material-ui/core";
 import Header from "./Header";
-
-const useStyles = makeStyles((theme) => {
-  return {
-    page: {
-      width: "100%",
-    },
-    toolbar: theme.mixins.toolbar,
-  };
-});
+import { useLayoutStyles } from "./Styles/LayoutStyles";
 
 export default function Layout({ children }: any) {
-  const classes = useStyles();
+  const classes = useLayoutStyles();
   return (
     <div>
       <Header />

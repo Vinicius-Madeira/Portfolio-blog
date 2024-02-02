@@ -7,49 +7,16 @@ import {
   ImageList,
   ImageListItem,
   Typography,
-  makeStyles,
 } from "@material-ui/core";
 import CallMadeIcon from "@material-ui/icons/CallMade";
 import { Link } from "react-router-dom";
-
-const useStyles = makeStyles((theme) => {
-  return {
-    root: {
-      marginInline: 12,
-    },
-    toolbar: {
-      display: "flex",
-      justifyContent: "center",
-    },
-    text: { width: "100%" },
-    strong: {
-      color: theme.palette.primary.main,
-    },
-    container: {
-      position: "absolute",
-      inset: "33% 0 33% 0",
-    },
-    buttons: {
-      marginInline: 10,
-      display: "flex",
-      gap: 16,
-    },
-  };
-});
+import { useHomepageStyles } from "./Styles/HomepageStyles";
 
 export default function Homepage() {
-  const classes = useStyles();
+  const classes = useHomepageStyles();
   return (
-    <Container
-      className={classes.container}
-      style={{ scrollbarGutter: "stable" }}
-    >
-      <Card
-        style={{
-          boxShadow: "none",
-          backgroundColor: "inherit",
-        }}
-      >
+    <Container className={classes.container}>
+      <Card elevation={0} className={classes.card}>
         <Grid container spacing={2}>
           <Grid item md={7}>
             <CardContent>
@@ -71,20 +38,18 @@ export default function Homepage() {
                 {"Front-end Developer"}
               </Typography>
               <Typography
-                className={classes.text}
-                style={{ fontWeight: 400 }}
+                className={classes.body1}
                 variant="h6"
                 component={"p"}
                 color="textSecondary"
                 gutterBottom
               >
                 {
-                  "I'm 23 years old, currently an intern at an IT company and undergraduate student in System Analysis and Development. I'm very passionate about learning new techonologies and overall stuff about life."
+                  "I'm 23 years old, currently an intern at an IT company and undergraduate student in System Analysis and Development. I'm very passionate about learning new technologies and overall stuff about life."
                 }
               </Typography>
               <Typography
-                className={classes.text}
-                style={{ fontWeight: 400, marginTop: 16 }}
+                className={classes.body2}
                 variant="body1"
                 component={"p"}
                 color="textSecondary"
@@ -121,7 +86,7 @@ export default function Homepage() {
           <Grid item md={5}>
             <ImageList rowHeight={320} cols={5}>
               <ImageListItem cols={4}>
-                <img src="./Foto4.jpg" alt={"Foto 4"} />
+                <img src="./Foto4.jpg" alt={"MeAtWork"} />
               </ImageListItem>
             </ImageList>
           </Grid>

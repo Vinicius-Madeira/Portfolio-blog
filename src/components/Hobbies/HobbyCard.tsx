@@ -1,23 +1,12 @@
+import { useStyles } from "./Styles/HobbyCardStyles";
 import { Hobby } from "./HobbyData";
-import {
-  Card,
-  CardContent,
-  CardMedia,
-  Typography,
-  makeStyles,
-} from "@material-ui/core";
-
-const useStyles = makeStyles({
-  media: {
-    height: 150,
-  },
-});
+import { Card, CardContent, CardMedia, Typography } from "@material-ui/core";
 
 interface HobbyCardProps {
-  hobby: Hobby;
+  hobbyProps: Hobby;
 }
 
-export default function HobbyCard({ hobby }: HobbyCardProps) {
+export default function HobbyCard({ hobbyProps: hobby }: HobbyCardProps) {
   const classes = useStyles();
   return (
     <Card elevation={0}>
@@ -25,14 +14,14 @@ export default function HobbyCard({ hobby }: HobbyCardProps) {
         <CardMedia
           className={classes.media}
           component="img"
-          image={hobby.imgSrc}
-          title={hobby.imgTitle}
-          alt={hobby.imgTitle + " Banner"}
+          image={hobby?.imgSrc}
+          title={hobby?.imgTitle}
+          alt={hobby?.imgTitle + " Banner"}
         />
       ) : null}
       <CardContent>
         <Typography variant="h5" component="h2" noWrap gutterBottom>
-          {hobby.title}
+          {hobby?.title}
         </Typography>
         <Typography
           variant="body2"
@@ -40,7 +29,7 @@ export default function HobbyCard({ hobby }: HobbyCardProps) {
           component="p"
           gutterBottom
         >
-          {hobby.body}
+          {hobby?.body}
         </Typography>
       </CardContent>
     </Card>

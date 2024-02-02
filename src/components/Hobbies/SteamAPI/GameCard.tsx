@@ -6,47 +6,31 @@ import {
   CardActions,
   CardContent,
   CardMedia,
-  Theme,
   Typography,
-  createStyles,
-  makeStyles,
 } from "@material-ui/core";
+import { useGameStyles } from "./Styles/GameCardStyles";
 
 interface GameCardProps {
-  game: Game;
+  gameProps: Game;
 }
 
-const useStyles = makeStyles((theme: Theme) =>
-  createStyles({
-    media: {
-      height: 150,
-    },
-    strong: {
-      color: theme.palette.primary.main,
-    },
-    button: {
-      padding: "8px 0",
-    },
-  })
-);
-
-export default function GameCard({ game }: GameCardProps) {
-  const classes = useStyles();
-  const bannerURL = `${baseMediaURL}/${game.appid}/header.jpg`;
-  const StoreGameURL = `${baseStoreURL}/${game.appid}`;
+export default function GameCard({ gameProps: game }: GameCardProps) {
+  const classes = useGameStyles();
+  const bannerURL = `${baseMediaURL}/${game?.appid}/header.jpg`;
+  const StoreGameURL = `${baseStoreURL}/${game?.appid}`;
 
   return (
     <Card elevation={0}>
       <CardMedia
         className={classes.media}
         component="img"
-        alt={`${game.name} Banner`}
+        alt={`${game?.name} Banner`}
         image={bannerURL}
-        title={`${game.name}`}
+        title={`${game?.name}`}
       />
       <CardContent>
         <Typography variant="h5" component="h2" noWrap gutterBottom>
-          {game.name}
+          {game?.name}
         </Typography>
         <Typography
           variant="body2"
@@ -56,7 +40,7 @@ export default function GameCard({ game }: GameCardProps) {
         >
           {"Played for "}
           <span className={classes.strong}>
-            {formatPlaytime(game.playtime_2weeks).toFixed(1)}
+            {formatPlaytime(game?.playtime_2weeks).toFixed(1)}
           </span>
           {" hour(s) in the last "}
           <span className={classes.strong}>two weeks</span>
@@ -69,7 +53,7 @@ export default function GameCard({ game }: GameCardProps) {
         >
           {"Played for "}
           <span className={classes.strong}>
-            {formatPlaytime(game.playtime_forever).toFixed(1)}
+            {formatPlaytime(game?.playtime_forever).toFixed(1)}
           </span>
           {" hour(s) in "}
           <span className={classes.strong}>total</span>

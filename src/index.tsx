@@ -16,9 +16,19 @@ const theme = createTheme({
     fontWeightMedium: 500,
     fontWeightBold: 700,
   },
+  overrides: {
+    MuiAppBar: {
+      colorDefault: {
+        backgroundColor: "#eee",
+      },
+    },
+  },
   palette: {
     primary: green,
     secondary: deepOrange,
+    background: {
+      default: "#f9f9f9",
+    },
   },
 });
 
