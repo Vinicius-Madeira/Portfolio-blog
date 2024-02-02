@@ -9,7 +9,7 @@ import EmojiPeopleIcon from "@material-ui/icons/EmojiPeople";
 import CodeIcon from "@material-ui/icons/Code";
 import { ReactElement } from "react";
 import { GitHub, Instagram, LinkedIn } from "@material-ui/icons";
-import { useStyles } from "./Styles/HeaderStyles";
+import { useHeaderStyles } from "./Styles/HeaderStyles";
 
 // Checks each routeName and provides an icon element to it
 function getRouteIcon(name: RouteName): ReactElement {
@@ -26,7 +26,7 @@ function getRouteIcon(name: RouteName): ReactElement {
 }
 
 export default function Header() {
-  const classes = useStyles();
+  const classes = useHeaderStyles();
   const navigate = useNavigate();
   const location = useLocation();
 
