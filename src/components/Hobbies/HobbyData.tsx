@@ -1,11 +1,11 @@
-export interface Hobby {
+export interface HobbyProps {
   imgSrc?: string;
   imgTitle?: string;
   title: string;
   body: any;
 }
 
-export const studies: Hobby[] = [
+export const studies: HobbyProps[] = [
   {
     imgSrc: "https://img.freepik.com/premium-vector/japan-flag_592324-6958.jpg",
     imgTitle: "Japan's Flag",
@@ -22,7 +22,7 @@ export const studies: Hobby[] = [
   },
 ];
 
-export const genres: Hobby[] = [
+export const genres: HobbyProps[] = [
   {
     title: "J-Pop",
     body: "Due to my japanese language studies, I've been listening to a lot of japanese songs, which is one of the genres that I enjoy the most at the moment.",

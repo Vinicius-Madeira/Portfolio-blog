@@ -1,12 +1,12 @@
 import { useHobbyStyles } from "./Styles/HobbyCardStyles";
-import { Hobby } from "./HobbyData";
+import { HobbyProps } from "./HobbyData";
 import { Card, CardContent, CardMedia, Typography } from "@material-ui/core";
 
 interface HobbyCardProps {
-  hobbyProps: Hobby;
+  hobby: HobbyProps;
 }
 
-export default function HobbyCard({ hobbyProps: hobby }: HobbyCardProps) {
+export default function HobbyCard({ hobby }: HobbyCardProps) {
   const classes = useHobbyStyles();
   return (
     <Card elevation={0}>

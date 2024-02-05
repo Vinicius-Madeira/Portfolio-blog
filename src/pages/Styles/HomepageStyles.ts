@@ -12,10 +12,10 @@ export const useHomepageStyles = makeStyles((theme) => {
     text: {
       width: "100%",
     },
-    body1: {
+    body: {
       fontWeight: 400,
     },
-    body2: {
+    textFooter: {
       marginTop: 16,
       fontWeight: 400,
     },
@@ -24,7 +24,7 @@ export const useHomepageStyles = makeStyles((theme) => {
     },
     container: {
       position: "absolute",
-      inset: "33% 0 33% 0",
+      inset: "33% 0",
     },
     card: {
       backgroundColor: "inherit",

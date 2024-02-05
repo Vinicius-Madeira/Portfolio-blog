@@ -38,7 +38,7 @@ export default function Homepage() {
                 {"Front-end Developer"}
               </Typography>
               <Typography
-                className={classes.body1}
+                className={classes.body}
                 variant="h6"
                 component={"p"}
                 color="textSecondary"
@@ -49,7 +49,7 @@ export default function Homepage() {
                 }
               </Typography>
               <Typography
-                className={classes.body2}
+                className={classes.textFooter}
                 variant="body1"
                 component={"p"}
                 color="textSecondary"

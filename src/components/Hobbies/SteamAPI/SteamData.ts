@@ -12,11 +12,11 @@ export function formatPlaytime(time: number): number {
 export interface ResponseData {
   response: {
     total_count: number;
-    games: Game[];
+    games: GameProps[];
   };
 }
 
-export interface Game {
+export interface GameProps {
   appid: number;
   name: string;
   playtime_2weeks: number;

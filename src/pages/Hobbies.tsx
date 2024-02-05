@@ -23,7 +23,7 @@ export default function Hobbies() {
               <Grid container spacing={2} justifyContent="space-evenly">
                 {studies?.map((hobby) => (
                   <Grid item key={hobby?.title} md={4}>
-                    <HobbyCard hobbyProps={hobby} />
+                    <HobbyCard hobby={hobby} />
                   </Grid>
                 ))}
               </Grid>
@@ -40,7 +40,7 @@ export default function Hobbies() {
               <Grid container spacing={2} justifyContent="space-evenly">
                 {genres?.map((genre) => (
                   <Grid item key={genre?.title} md={4}>
-                    <HobbyCard hobbyProps={genre} />
+                    <HobbyCard hobby={genre} />
                   </Grid>
                 ))}
               </Grid>

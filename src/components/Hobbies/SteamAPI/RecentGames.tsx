@@ -1,4 +1,4 @@
-import { ResponseData, Game } from "./SteamData";
+import { ResponseData, GameProps } from "./SteamData";
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 import GameCard from "./GameCard";
@@ -48,10 +48,10 @@ export default function RecentGames() {
 
   return (
     <Container>
-      <Grid container spacing={2} justifyContent="center">
+      <Grid container spacing={2} justifyContent="space-evenly">
         {resp?.response?.games
           ?.filter((game) => game?.appid !== 730)
-          .map((game: Game) => (
+          .map((game: GameProps) => (
             <Grid item key={game?.appid} md={4}>
               <GameCard gameProps={game} />
             </Grid>

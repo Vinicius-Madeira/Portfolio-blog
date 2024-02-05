@@ -1,4 +1,9 @@
-import { baseMediaURL, baseStoreURL, formatPlaytime, Game } from "./SteamData";
+import {
+  baseMediaURL,
+  baseStoreURL,
+  formatPlaytime,
+  GameProps,
+} from "./SteamData";
 import { FaSteam } from "react-icons/fa";
 import {
   Button,
@@ -11,7 +16,7 @@ import {
 import { useGameStyles } from "./Styles/GameCardStyles";
 
 interface GameCardProps {
-  gameProps: Game;
+  gameProps: GameProps;
 }
 
 export default function GameCard({ gameProps: game }: GameCardProps) {
