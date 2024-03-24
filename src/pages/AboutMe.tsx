@@ -5,37 +5,12 @@ import {
   CardMedia,
   Container,
   Grid,
-  Theme,
   Typography,
-  createStyles,
-  makeStyles,
 } from "@material-ui/core";
-
-const useStyles = makeStyles((theme: Theme) =>
-  createStyles({
-    card: {
-      display: "flex",
-    },
-    details: {
-      display: "flex",
-      flexDirection: "column",
-    },
-    content: {
-      flex: "1 0 auto",
-    },
-    media: {
-      width: 150,
-      height: 150,
-      alignSelf: "center",
-    },
-    strong: {
-      color: theme.palette.primary.main,
-    },
-  })
-);
+import { useAboutMeStyles } from "./Styles/AboutMeStyles";
 
 export default function AboutMe() {
-  const classes = useStyles();
+  const classes = useAboutMeStyles();
   return (
     <Container>
       <Grid container spacing={2}>
@@ -60,12 +35,12 @@ export default function AboutMe() {
                             {"UNIP"}
                           </Typography>
                           <Typography variant="subtitle1" color="textSecondary">
-                            {"My first undegraduate course was in "}
+                            {"My first undergraduate course was in "}
                             <span className={classes.strong}>
                               {"Biomedical Sciences "}
                             </span>
                             {
-                              "at Universidade Paulista. I started it in 2018 and finished in 2021 as a bachelor's adepted in "
+                              "at Universidade Paulista. I started it in 2018 and finished in 2021 as a bachelor's adept in "
                             }
                             <span className={classes.strong}>
                               {"clinical analysis"}
@@ -291,7 +266,7 @@ export default function AboutMe() {
                           </Typography>
                           <Typography variant="subtitle1" color="textSecondary">
                             {
-                              "My favorite dishes are Parmegiana, meat/chicken Pancakes and Lasagna."
+                              "My favorite dishes are Parmigiana, meat/chicken Pancakes and Lasagna."
                             }
                           </Typography>
                         </CardContent>

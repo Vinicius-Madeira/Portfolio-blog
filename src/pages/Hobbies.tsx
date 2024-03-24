@@ -1,17 +1,10 @@
-import { Container, Grid, makeStyles } from "@material-ui/core";
+import { Container, Grid } from "@material-ui/core";
 import RecentGames from "../components/Hobbies/SteamAPI/RecentGames";
 import HobbyCard from "../components/Hobbies/HobbyCard";
 import { studies, genres } from "../components/Hobbies/HobbyData";
 import CardItem from "../components/Hobbies/CardItem";
 
-const useStyles = makeStyles({
-  container: {
-    justifyContent: "space-evenly",
-  },
-});
-
 export default function Hobbies() {
-  const classes = useStyles();
   return (
     <Container>
       <Grid container spacing={2}>
@@ -27,9 +20,9 @@ export default function Hobbies() {
             subheader={"Some of the stuff I've been studying"}
           >
             <Container>
-              <Grid container spacing={2} className={classes.container}>
-                {studies.map((hobby) => (
-                  <Grid item key={hobby.title} md={4}>
+              <Grid container spacing={2} justifyContent="space-evenly">
+                {studies?.map((hobby) => (
+                  <Grid item key={hobby?.title} md={4}>
                     <HobbyCard hobby={hobby} />
                   </Grid>
                 ))}
@@ -41,12 +34,12 @@ export default function Hobbies() {
         <Grid item md={12}>
           <CardItem
             title={"Music"}
-            subheader={"Some genres that I listen quite alot"}
+            subheader={"Some genres that I listen quite a lot"}
           >
             <Container>
-              <Grid container spacing={2} className={classes.container}>
-                {genres.map((genre) => (
-                  <Grid item key={genre.title} md={4}>
+              <Grid container spacing={2} justifyContent="space-evenly">
+                {genres?.map((genre) => (
+                  <Grid item key={genre?.title} md={4}>
                     <HobbyCard hobby={genre} />
                   </Grid>
                 ))}

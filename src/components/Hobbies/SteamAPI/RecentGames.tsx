@@ -1,4 +1,4 @@
-import { ResponseData, Game } from "./SteamData";
+import { ResponseData, GameProps } from "./SteamData";
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 import GameCard from "./GameCard";
@@ -7,30 +7,24 @@ import {
   Container,
   Grid,
   Typography,
-  makeStyles,
 } from "@material-ui/core";
-
-const useStyles = makeStyles({
-  container: {
-    justifyContent: "space-evenly",
-  },
-});
+import { useRecentGamesStyles } from "./Styles/RecentGamesStyles";
 
 const localServer = "http://localhost:8000";
 
 export default function RecentGames() {
-  const classes = useStyles();
+  const classes = useRecentGamesStyles();
   let resp: ResponseData;
   const { data, isLoading, isError } = useQuery({
     queryKey: ["games"],
     queryFn: () =>
       axios
-        .get(localServer)
-        .then((response) => {
+        ?.get(localServer)
+        ?.then((response) => {
           return response.data;
         })
-        .catch(function (error) {
-          console.error(error.toJSON());
+        ?.catch(function (error) {
+          console?.error(error?.toJSON());
         }),
     staleTime: 1000 * 60 * 5, // 5 minutes until a new request is made to get updated info
   });
@@ -44,7 +38,7 @@ export default function RecentGames() {
   }
   if (isLoading) {
     return (
-      <div style={{ display: "flex", justifyContent: "center" }}>
+      <div className={classes.flexCenter}>
         <CircularProgress color={"primary"} />
       </div>
     );
@@ -54,12 +48,12 @@ export default function RecentGames() {
 
   return (
     <Container>
-      <Grid container spacing={2} className={classes.container}>
+      <Grid container spacing={2} justifyContent="space-evenly">
         {resp?.response?.games
           ?.filter((game) => game?.appid !== 730)
-          .map((game: Game) => (
+          .map((game: GameProps) => (
             <Grid item key={game?.appid} md={4}>
-              <GameCard game={game} />
+              <GameCard gameProps={game} />
             </Grid>
           ))}
       </Grid>

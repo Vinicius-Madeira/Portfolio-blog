@@ -1,4 +1,3 @@
-import { createStyles, makeStyles, Theme } from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import { RouteName, routes } from "../Router";
@@ -10,58 +9,7 @@ import EmojiPeopleIcon from "@material-ui/icons/EmojiPeople";
 import CodeIcon from "@material-ui/icons/Code";
 import { ReactElement } from "react";
 import { GitHub, Instagram, LinkedIn } from "@material-ui/icons";
-
-const useStyles = makeStyles((theme: Theme) =>
-  createStyles({
-    root: {
-      flexGrow: 1,
-      marginBottom: 20,
-    },
-    wrapper: {
-      display: "flex",
-    },
-    breadcrumb: {
-      display: "flex",
-      margin: "auto",
-      "& :hover > a:is(:hover)": {
-        textDecoration: "underline",
-        textDecorationColor: theme.palette.primary.main,
-        textUnderlineOffset: "3px",
-        textDecorationThickness: "2px",
-      },
-      "& :active > a:is(:active)": {
-        opacity: 0.8,
-      },
-    },
-    link: {
-      color: theme.palette.common.black,
-      padding: "2px 4px",
-      display: "flex",
-      borderRadius: 8,
-      textDecoration: "none",
-      "& :first-child": {
-        marginRight: theme.spacing(0.5),
-        width: 20,
-        height: 20,
-      },
-    },
-    active: {
-      textDecoration: "underline",
-      textDecorationColor: theme.palette.primary.light,
-      textUnderlineOffset: "3px",
-      textDecorationThickness: "2px",
-    },
-    icons: {
-      display: "flex",
-      flexDirection: "row",
-      "& :nth-child(n)": {
-        background: "transparent",
-        color: theme.palette.common.black,
-        cursor: "pointer",
-      },
-    },
-  })
-);
+import { useHeaderStyles } from "./Styles/HeaderStyles";
 
 // Checks each routeName and provides an icon element to it
 function getRouteIcon(name: RouteName): ReactElement {
@@ -78,38 +26,32 @@ function getRouteIcon(name: RouteName): ReactElement {
 }
 
 export default function Header() {
-  const classes = useStyles();
+  const classes = useHeaderStyles();
   const navigate = useNavigate();
   const location = useLocation();
 
   return (
     <div className={classes.root}>
-      <AppBar
-        position="fixed"
-        elevation={0}
-        style={{ backgroundColor: "#eee" }}
-      >
+      <AppBar position="fixed" elevation={0} color="default">
         <Toolbar variant="dense" className={classes.wrapper}>
           <Tooltip title="Vinicius Madeira" arrow placement="right">
-            <Avatar src="./Foto1.jpg" alt="Me" />
+            <Avatar src="./Foto1.jpg" alt="MeInTheCar" />
           </Tooltip>
-          <Typography style={{ position: "absolute", left: 80 }}>
-            Vinicius Madeira
-          </Typography>
+          <Typography className={classes.text}>Vinicius Madeira</Typography>
           <Breadcrumbs aria-label="breadcrumb" className={classes.breadcrumb}>
             {routes.map((route) => {
               return (
                 <Link
-                  key={route.name}
+                  key={route?.name}
                   color="inherit"
-                  to={route.path}
+                  to={route?.path}
                   className={`${classes.link} ${
-                    location.pathname === route.path ? `${classes.active}` : ""
+                    location.pathname === route?.path ? `${classes.active}` : ""
                   }`}
-                  onClick={() => navigate(route.path)}
+                  onClick={() => navigate(route?.path)}
                 >
-                  {getRouteIcon(route.name)}
-                  {route.name}
+                  {getRouteIcon(route?.name)}
+                  {route?.name}
                 </Link>
               );
             })}
