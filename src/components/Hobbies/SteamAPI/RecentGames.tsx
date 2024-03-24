@@ -56,7 +56,7 @@ export default function RecentGames() {
     <Container>
       <Grid container spacing={2} className={classes.container}>
         {resp?.response?.games
-          ?.filter((game) => game.appid !== 730)
+          ?.filter((game) => game?.appid !== 730)
           .map((game: Game) => (
             <Grid item key={game?.appid} md={4}>
               <GameCard game={game} />

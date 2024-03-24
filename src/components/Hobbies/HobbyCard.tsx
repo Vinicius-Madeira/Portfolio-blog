@@ -21,13 +21,15 @@ export default function HobbyCard({ hobby }: HobbyCardProps) {
   const classes = useStyles();
   return (
     <Card elevation={0}>
-      <CardMedia
-        className={classes.media}
-        component="img"
-        image={hobby.imgSrc}
-        title={hobby.imgTitle}
-        alt={hobby.imgTitle + " Banner"}
-      />
+      {hobby?.imgSrc ? (
+        <CardMedia
+          className={classes.media}
+          component="img"
+          image={hobby.imgSrc}
+          title={hobby.imgTitle}
+          alt={hobby.imgTitle + " Banner"}
+        />
+      ) : null}
       <CardContent>
         <Typography variant="h5" component="h2" noWrap gutterBottom>
           {hobby.title}

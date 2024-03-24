@@ -25,7 +25,7 @@ const useStyles = makeStyles((theme) => {
     strong: {
       color: theme.palette.primary.main,
     },
-    test: {
+    container: {
       position: "absolute",
       inset: "33% 0 33% 0",
     },
@@ -40,7 +40,10 @@ const useStyles = makeStyles((theme) => {
 export default function Homepage() {
   const classes = useStyles();
   return (
-    <Container className={classes.test} style={{ scrollbarGutter: "stable" }}>
+    <Container
+      className={classes.container}
+      style={{ scrollbarGutter: "stable" }}
+    >
       <Card
         style={{
           boxShadow: "none",
@@ -116,14 +119,8 @@ export default function Homepage() {
           </Grid>
 
           <Grid item md={5}>
-            <ImageList rowHeight={160} cols={5}>
-              <ImageListItem cols={1}>
-                <img src="./Foto3.jpg" alt={"Foto 3"} />
-              </ImageListItem>
-              <ImageListItem cols={2}>
-                <img src="./Foto2.jpg" alt={"Foto 2"} />
-              </ImageListItem>
-              <ImageListItem cols={3}>
+            <ImageList rowHeight={320} cols={5}>
+              <ImageListItem cols={4}>
                 <img src="./Foto4.jpg" alt={"Foto 4"} />
               </ImageListItem>
             </ImageList>
