@@ -86,7 +86,7 @@ export default function Homepage() {
           <Grid item md={5}>
             <ImageList rowHeight={320} cols={5}>
               <ImageListItem cols={4}>
-                <img src="./Foto4.jpg" alt={"MeAtWork"} />
+                <img src="/Foto4.jpg" alt={"MeAtWork"} />
               </ImageListItem>
             </ImageList>
           </Grid>
