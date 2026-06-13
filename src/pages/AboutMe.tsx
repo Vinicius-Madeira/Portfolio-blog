@@ -52,7 +52,7 @@ export default function AboutMe() {
                       <CardMedia
                         className={classes.media}
                         component="img"
-                        image="./unip-logo.png"
+                        image="/unip-logo.png"
                         title="UNIP Logo"
                         alt="UNIP Logo"
                       />
@@ -79,7 +79,7 @@ export default function AboutMe() {
                       <CardMedia
                         className={classes.media}
                         component="img"
-                        image="./mackenzie-logo.png"
+                        image="/mackenzie-logo.png"
                         title="Mackenzie Logo"
                         alt="Mackenzie Logo"
                       />
@@ -126,7 +126,7 @@ export default function AboutMe() {
                       <CardMedia
                         className={classes.media}
                         component="img"
-                        image="./unip-logo.png"
+                        image="/unip-logo.png"
                         title="UNIP Logo"
                         alt="UNIP Logo"
                       />
@@ -151,7 +151,7 @@ export default function AboutMe() {
                       <CardMedia
                         className={classes.media}
                         component="img"
-                        image="./skyone-logo2.png"
+                        image="/skyone-logo2.png"
                         title="Skyone Logo"
                         alt="Skyone Logo"
                       />

@@ -35,7 +35,7 @@ export default function Header() {
       <AppBar position="fixed" elevation={0} color="default">
         <Toolbar variant="dense" className={classes.wrapper}>
           <Tooltip title="Vinicius Madeira" arrow placement="right">
-            <Avatar src="./Foto1.jpg" alt="MeInTheCar" />
+            <Avatar src="/Foto1.jpg" alt="MeInTheCar" />
           </Tooltip>
           <Typography className={classes.text}>Vinicius Madeira</Typography>
           <Breadcrumbs aria-label="breadcrumb" className={classes.breadcrumb}>
